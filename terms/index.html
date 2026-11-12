@@ -5,17 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vireo terms of service</title>
 <link rel="icon" href="../img/icon.png">
+<link rel="preload" href="../fonts/roboto-flex-wide.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#B4F03C">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <a class="brand" href="../"><img src="../img/icon.png" alt="">Vireo</a>
-    <nav><a href="../">Home</a><a href="../privacy/">Privacy</a><a href="./" aria-current="page">Terms</a></nav>
-  </div>
-</header>
+<div class="legal-header">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main">
+      <a class="brand" href="../">
+        <img src="../img/icon.png" alt="" width="38" height="38">
+        <span>Vireo</span>
+      </a>
+      <div class="site-nav__links">
+        <a class="site-nav__link" href="../#capacity">Capacity</a>
+        <a class="site-nav__link" href="../#season">Season</a>
+        <a class="btn btn--nav" href="../#join">Join the test</a>
+      </div>
+    </nav>
+  </header>
+</div>
 <main>
-  <div class="wrap">
+  <div class="wrap legal">
     <section class="title">
       <h1>Terms of service</h1>
       <p>Please read these terms carefully before using Vireo.</p>
@@ -51,8 +62,14 @@
     </article>
   </div>
 </main>
-<footer>
-  <div class="wrap"><span>© 2026 Vireo</span><span><a href="../">Home</a> · <a href="../privacy/">Privacy policy</a></span></div>
+<footer class="wrap site-footer">
+  <span class="site-footer__brand"><img src="../img/icon.png" alt="" width="28" height="28">Vireo</span>
+  <nav class="site-footer__links" aria-label="Legal">
+    <a href="../privacy/">Privacy policy</a>
+    <a href="../terms/" aria-current="page">Terms of service</a>
+    <a href="../delete-account/">Delete your account</a>
+  </nav>
+  <span>© 2026 Vireo</span>
 </footer>
 </body>
 </html>
