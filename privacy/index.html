@@ -19,7 +19,7 @@
     <section class="title">
       <h1>Privacy policy</h1>
       <p>Vireo is a personal health and fitness companion. This policy explains what information the app collects, how it is used, and the choices you have.</p>
-      <p class="updated">Last updated 23 October 2026</p>
+      <p class="updated">Last updated 12 November 2026</p>
     </section>
     <article class="doc">
   <h2>Information we collect</h2>
@@ -28,6 +28,7 @@
     <li>Health and fitness data, read through Android Health Connect with your permission: heart rate variability, resting heart rate, sleep, recovery, activity and steps, calories, nutrition and food entries, hydration, weight, body fat, height and related metrics.</li>
     <li>Data from your Google account, only if you connect it (see “Data from Google” below).</li>
     <li>Profile and biometrics you enter: age, gender, height, weight, body-fat estimate and activity level.</li>
+    <li>Your location, only when you tap “Use current location” while looking for a gym. It is used once to find gyms near you and is not stored.</li>
     <li>Training logs you create, such as climbing sessions and finger-health notes.</li>
     <li>App preferences, in-app notifications and an optional profile photo.</li>
   </ul>
@@ -57,6 +58,7 @@
     <li>Android Health Connect provides on-device access to your health data.</li>
     <li>Google’s Gemini API reads text and images you choose to send, so the app can understand them: food you describe in words, photos of meals and nutrition labels, and the optional free-text plan notes from training setup (off by default; you confirm the result before anything is applied).</li>
     <li>Supabase hosts the cloud database that stores your account data.</li>
+    <li>OpenStreetMap services (Overpass and Nominatim) are used to find climbing gyms. When you tap “Use current location”, your coordinates are sent once to find gyms nearby; when you search by name, the words you type are sent. Nothing is stored by Vireo, and no account details or health data are sent.</li>
     <li>Open Food Facts is used to look up foods you scan by barcode and to search foods by name. The words you search for are sent to it, together with your country and the app’s language, so it can show products sold there. No account details, name or health data are sent.</li>
     <li>Google Firebase Crashlytics receives a crash report only if you turn on “Send crash reports” in Settings. It is off by default and you can turn it off at any time. A report holds the error trace, your phone model, Android version, app version and a random installation ID; Vireo adds no health data or account details to it.</li>
   </ul>
