@@ -1,34 +1,60 @@
-/* Colours come from the app's own tokens (ui/theme/Color.kt): the lime accent
-   gradient, its ink, and the paragraph-safe link greens for each theme. */
+/* Colours come from the app's current theme (ui/theme/M3ePalette.kt, the M3 Expressive scheme of
+   2026-10-30): flat lime #B4F03C, olive primary for text and links, the light page is
+   surfaceContainer behind white cards, dark is near-black. No gradients, no shadows, 28 px cards.
+   Lime is the one fill, and in light it only sits on the dark hero (design rules 2026-10-30).
+   Type: Roboto Flex for the interface, Instrument Serif for the one headline sentence.
+   Both are self-hosted (SIL OFL, see fonts/), so no visitor data goes to a font CDN. */
+@font-face {
+  font-family: "Roboto Flex";
+  src: url("fonts/roboto-flex.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("fonts/instrument-serif.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
-  --ground: #f5efe3;
-  --ground-glow: #fbf7ee;
-  --card: #fffdf8;
-  --ink: #1d2a14;
-  --muted: #5f6452;
-  --rule: #e6dfcf;
-  --link: #4c6b12;
-  --tint: #e9f5c6;
-  --tint-edge: #cfe58a;
-  --paper: #f3ede0;
-  --lime-start: #cbf762;
-  --lime-end: #8fd32e;
-  --on-lime: #16210f;
-  --shadow: 0 1px 2px rgba(43, 38, 28, .06), 0 12px 32px -12px rgba(43, 38, 28, .18);
+  color-scheme: light dark;
+  --page: #efeee5;          /* surfaceContainer */
+  --card: #ffffff;          /* surfaceContainerLowest */
+  --well: #f5f4eb;          /* surfaceContainerLow */
+  --ink: #1b1c17;           /* onSurface */
+  --muted: #55594a;         /* onSurfaceVariant */
+  --rule: #c6c8b8;          /* outlineVariant */
+  --link: #496800;          /* primary (olive) */
+  --selected: #dcefb0;      /* secondaryContainer */
+  --on-selected: #1b2616;
+  --hero: #1e2817;
+  --on-hero: #f2f1e8;
+  --on-hero-muted: #b9bdae;
+  --lime: #b4f03c;          /* primaryContainer */
+  --on-lime: #1b2616;
+  /* category accents (acc fg) for the three holds */
+  --acc-moss: #577b52;
+  --acc-sky: #407a8b;
+  --acc-coral: #9d6543;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --ground: #151711;
-    --ground-glow: #1d2117;
-    --card: #1f221a;
-    --ink: #eeeedf;
-    --muted: #a7ab98;
-    --rule: #33372b;
-    --link: #a6d845;
-    --tint: rgba(180, 240, 60, .10);
-    --tint-edge: rgba(180, 240, 60, .28);
-    --paper: #262a20;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 40px -16px rgba(0, 0, 0, .6);
+    --page: #121410;        /* surface */
+    --card: #1f211b;        /* surfaceContainer */
+    --well: #2a2d24;        /* surfaceContainerHighest */
+    --ink: #eef0e6;
+    --muted: #b7bca8;
+    --rule: #45483c;
+    --link: #c9f06a;
+    --selected: #3d4d22;
+    --on-selected: #eef0e6;
+    --hero: #f2efe2;
+    --on-hero: #1b2616;
+    --on-hero-muted: #4a5240;
+    --acc-moss: #a9caa1;
+    --acc-sky: #9ac8d9;
+    --acc-coral: #f0b493;
   }
 }
 
@@ -38,85 +64,84 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  background:
-    radial-gradient(1200px 520px at 85% -10%, rgba(180, 240, 60, .22), transparent 60%),
-    radial-gradient(900px 480px at -10% 10%, var(--ground-glow), transparent 70%),
-    var(--ground);
-  font: 17px/1.65 ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, sans-serif;
+  background: var(--page);
+  font: 17px/1.6 "Roboto Flex", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-weight: 400;
 }
 a { color: var(--link); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
+h1, h2, h3 { font-weight: 650; }
 
 .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
 
 /* Header */
 header { padding: 20px 0 8px; }
 header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 800; font-size: 21px; letter-spacing: -.01em; }
-.brand img { width: 40px; height: 40px; border-radius: 50%; box-shadow: var(--shadow); }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 21px; letter-spacing: -.01em; }
+.brand img { width: 40px; height: 40px; border-radius: 10px; }
 nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a {
-  color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 600;
-  padding: 7px 14px; border-radius: 999px;
+  color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500;
+  padding: 8px 16px; border-radius: 999px;
 }
-nav a:hover { color: var(--ink); background: var(--tint); }
-nav a[aria-current] { color: var(--ground); background: var(--ink); }
+nav a:hover { color: var(--ink); background: var(--card); }
+nav a[aria-current] { color: var(--on-selected); background: var(--selected); font-weight: 600; }
 
 main { padding: 24px 0 40px; }
 
-/* Home hero */
+/* Home hero: the dark hero card, the only place lime appears in light */
 .hero {
-  position: relative; overflow: hidden;
-  margin-top: 12px; padding: 40px 32px 36px;
-  border-radius: 32px;
-  color: var(--on-lime);
-  background: linear-gradient(135deg, var(--lime-start), var(--lime-end));
-  box-shadow: 0 24px 48px -24px rgba(110, 170, 30, .7);
+  margin-top: 12px; padding: 36px 32px 32px;
+  border-radius: 28px;
+  color: var(--on-hero);
+  background: var(--hero);
 }
-.hero img { width: 88px; height: 88px; border-radius: 50%; box-shadow: 0 8px 24px -8px rgba(22, 33, 15, .45); }
-.hero h1 { font-size: clamp(32px, 6.4vw, 46px); line-height: 1.08; letter-spacing: -.025em; margin: 20px 0 12px; max-width: 13em; }
-.hero p { font-size: 18.5px; line-height: 1.5; margin: 0; max-width: 31em; }
-.hero p.status { margin-top: 22px; font-size: 14.5px; opacity: .72; }
+.hero img { width: 88px; height: 88px; border-radius: 22px; display: block; }
+.hero h1 {
+  font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+  font-size: clamp(38px, 7.6vw, 56px); line-height: 1.02; letter-spacing: -.01em;
+  margin: 22px 0 14px; max-width: 12em;
+}
+.hero p { font-size: 18px; line-height: 1.5; margin: 0; max-width: 31em; color: var(--on-hero-muted); }
+.hero p.status {
+  display: inline-block; margin-top: 24px; padding: 9px 16px; border-radius: 16px;
+  font-size: 14.5px; font-weight: 600; line-height: 1.35;
+  color: var(--on-lime); background: var(--lime);
+}
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 18px; }
-.tile {
-  background: var(--card); border-radius: 24px; padding: 22px 22px 20px;
-  box-shadow: var(--shadow);
-}
-.tile .hold { display: block; width: 84px; height: 66px; margin: -8px 0 -4px -8px; filter: drop-shadow(0 3px 3px rgba(43, 38, 28, .18)); }
-.tile h3 { margin: 10px 0 4px; font-size: 18px; letter-spacing: -.01em; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px; margin-top: 8px; }
+.tile { background: var(--card); border-radius: 28px; padding: 22px 22px 22px; }
+.tile .hold { display: block; width: 56px; height: 44px; margin: -2px 0 0 -4px; }
+.tile .hold .body { fill: currentColor; }
+.tile .hold .bolt { fill: var(--card); }
+.tile:nth-child(1) .hold { color: var(--acc-moss); }
+.tile:nth-child(2) .hold { color: var(--acc-sky); }
+.tile:nth-child(3) .hold { color: var(--acc-coral); }
+.tile h3 { margin: 12px 0 4px; font-size: 18px; letter-spacing: -.005em; }
 .tile p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.55; }
 
-.section-title { font-size: 22px; letter-spacing: -.015em; margin: 40px 0 4px; }
+.section-title { font-size: 22px; letter-spacing: -.01em; margin: 40px 0 4px; }
 .section-sub { color: var(--muted); margin: 0 0 4px; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .chip {
-  padding: 8px 14px; border-radius: 999px; font-size: 15px; font-weight: 600;
+  padding: 7px 14px; border-radius: 8px; font-size: 15px; font-weight: 500;
   background: var(--card); border: 1px solid var(--rule);
 }
 
 /* Legal pages */
-.title { margin-top: 20px; padding: 8px 4px 24px; border-bottom: 1px solid var(--rule); }
+.title { margin-top: 20px; padding: 8px 4px 20px; }
 .title h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 6px; }
 .title p { margin: 0; color: var(--muted); max-width: 34em; }
 .updated { font-size: 14px; font-weight: 600; margin-top: 12px !important; }
 
-.doc {
-  margin-top: 16px; padding: 8px 28px 28px; border-radius: 28px;
-  background: var(--card); box-shadow: var(--shadow);
-}
-.doc h2 {
-  font-size: 20px; letter-spacing: -.01em; margin: 30px 0 6px;
-}
+.doc { margin-top: 8px; padding: 8px 28px 28px; border-radius: 28px; background: var(--card); }
+.doc h2 { font-size: 20px; letter-spacing: -.005em; margin: 30px 0 6px; }
 .doc p, .doc li { font-size: 16.5px; }
 .doc ul { padding-left: 0; list-style: none; }
 .doc li { position: relative; padding-left: 20px; margin-bottom: 10px; }
 .doc li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: var(--muted); opacity: .6; }
-.callout {
-  margin: 24px -12px 0; padding: 4px 22px 18px; border-radius: 22px;
-  background: var(--paper);
-}
+.callout { margin: 24px -12px 0; padding: 4px 22px 18px; border-radius: 22px; background: var(--well); }
 .callout h2 { margin-top: 20px; }
 
 footer { padding: 8px 0 40px; color: var(--muted); font-size: 14px; }
@@ -124,7 +149,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 footer a { color: var(--muted); }
 
 @media (max-width: 520px) {
-  .hero { padding: 32px 22px 28px; border-radius: 26px; }
-  .doc { padding: 4px 18px 22px; border-radius: 22px; }
+  .hero { padding: 28px 22px 26px; border-radius: 28px; }
+  .doc { padding: 4px 18px 22px; border-radius: 24px; }
   .callout { margin: 20px -8px 0; padding: 2px 16px 14px; }
 }
