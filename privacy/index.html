@@ -30,7 +30,7 @@
     <section class="title">
       <h1>Privacy policy</h1>
       <p>Vireo is a personal health and fitness companion. This policy explains what information the app collects, how it is used, and the choices you have.</p>
-      <p class="updated">Last updated 12 November 2026</p>
+      <p class="updated">Last updated 17 November 2026</p>
     </section>
     <article class="doc">
   <h2>Information we collect</h2>
@@ -41,6 +41,7 @@
     <li>Profile and biometrics you enter: age, gender, height, weight, body-fat estimate and activity level.</li>
     <li>Your location, only when you tap “Use current location” while looking for a gym. It is used once to find gyms near you and is not stored.</li>
     <li>Training logs you create, such as climbing sessions and finger-health notes.</li>
+    <li>Board climbs: the climbs you log on a climbing board, if you link a board account or import a history file (see “Climbing boards” below), and the board climbs, lists, beta links and board settings you save in Vireo.</li>
     <li>App preferences, in-app notifications and an optional profile photo.</li>
   </ul>
 
@@ -58,6 +59,20 @@
 
   </div>
 
+  <h2>Climbing boards</h2>
+  <p>Vireo can work with Kilter, Tension, MoonBoard and the other boards that run on the Aurora Climbing platform (Decoy, Grasshopper, So iLL, Touchstone and Aurora). Every part of this is optional.</p>
+  <ul>
+    <li><strong>Linking a board account.</strong> When you link an account, the email or username and password you type are sent over an encrypted connection to that board’s own service, to sign you in: Kilter’s servers for Kilter, moonboard.com for MoonBoard, and the board’s own app servers for the Aurora boards. They are not sent to Vireo’s servers. Vireo then reads your logbook from that service: the climbs you ticked, with details such as name, angle, attempts, grade, stars, your comment and the date, as far as that board records them. Vireo only reads; it never adds, changes or deletes anything in your board account.</li>
+    <li><strong>What Vireo keeps of your login.</strong> For Kilter, Vireo keeps a sign-in token and not your password. For MoonBoard and the Aurora boards the password has to be kept, because their sign-in cannot be renewed any other way. Either is stored encrypted on your phone, with a key that stays in Android’s secure key storage. It is never copied to Vireo’s cloud and never leaves the phone except to sign in to, and read from, that board’s own service. Disconnecting a board removes it from the phone, together with the board climbs Vireo had fetched. Climbs already placed in your sessions stay there.</li>
+    <li><strong>Nothing about you goes the other way.</strong> Vireo does not send your Vireo account, email, health data or training to any board maker.</li>
+    <li><strong>Where board climbs end up.</strong> Climbs read from your board account become part of your climbing sessions, so they are stored in your Vireo account like the rest of your training logs, as described under “Where your data is stored”. Which session you placed each climb in, or dismissed, is stored the same way. The copy of the board’s climb list that Vireo fetches stays on your phone.</li>
+    <li><strong>Imported history.</strong> If you import a history file from a board app, the file is read on your phone and is not uploaded. The rows you import are saved as part of your data and sync with your Vireo account.</li>
+    <li><strong>Board climb files.</strong> The climbs for the board you choose are downloaded from Vireo’s own cloud storage, with your Vireo sign-in. No board account is involved.</li>
+    <li><strong>Light-up over Bluetooth.</strong> To light a climb, Vireo searches for boards over Bluetooth, connects to the board’s controller and sends it the holds to light. This stays between your phone and the board. Vireo remembers the board’s Bluetooth address on that phone only; it is not synced. Vireo does not use your location for this.</li>
+    <li><strong>Climb together.</strong> When you start or join a crew, phones in the same room connect directly to each other through Nearby Connections. The crew’s display names and the queue of climbs are exchanged between those phones. Vireo does not send them to a server. Climb together is offered to athletes of 16 and older.</li>
+    <li><strong>Beta links.</strong> You can save a web address against a board climb. It is stored in your Vireo account with the rest of your board data. When you open it, your phone hands it to your browser or another app. Vireo itself makes no request to the address.</li>
+  </ul>
+
   <h2>How we use your information</h2>
   <p>Your data is used to calculate your Capacity, sleep score and load, to show your dashboard and history, to generate your training plan, and to keep your information in sync across your devices.</p>
 
@@ -69,6 +84,7 @@
     <li>Android Health Connect provides on-device access to your health data.</li>
     <li>Google’s Gemini API reads text and images you choose to send, so the app can understand them: food you describe in words, photos of meals and nutrition labels, and the optional free-text plan notes from training setup (off by default; you confirm the result before anything is applied).</li>
     <li>Supabase hosts the cloud database that stores your account data.</li>
+    <li>Board makers’ own services (Kilter, MoonBoard and the Aurora Climbing boards) receive your board login only if you link that board, only to sign you in and read your logbook, as described under “Climbing boards”.</li>
     <li>OpenStreetMap services (Overpass and Nominatim) are used to find climbing gyms. When you tap “Use current location”, your coordinates are sent once to find gyms nearby; when you search by name, the words you type are sent. Nothing is stored by Vireo, and no account details or health data are sent.</li>
     <li>Open Food Facts is used to look up foods you scan by barcode and to search foods by name. The words you search for are sent to it, together with your country and the app’s language, so it can show products sold there. No account details, name or health data are sent.</li>
     <li>Google Firebase Crashlytics receives a crash report only if you turn on “Send crash reports” in Settings. It is off by default and you can turn it off at any time. A report holds the error trace, your phone model, Android version, app version and a random installation ID; Vireo adds no health data or account details to it.</li>
