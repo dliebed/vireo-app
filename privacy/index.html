@@ -33,6 +33,9 @@
       <p class="updated">Last updated 17 November 2026</p>
     </section>
     <article class="doc">
+  <h2>Who is responsible</h2>
+  <p>Vireo is run by <mark>[CONTROLLER NAME AND ADDRESS: to be given by Dawid]</mark>. Under the EU General Data Protection Regulation (GDPR) we are the controller of the personal data described here. You can reach us at <a href="mailto:privacy@vireotrain.app">privacy@vireotrain.app</a>.</p>
+
   <h2>Information we collect</h2>
   <ul>
     <li>Account details: your name, email address and chosen username. Your password is never stored directly; only a secure cryptographic hash of it is kept.</li>
@@ -76,8 +79,51 @@
   <h2>How we use your information</h2>
   <p>Your data is used to calculate your Capacity, sleep score and load, to show your dashboard and history, to generate your training plan, and to keep your information in sync across your devices.</p>
 
+  <h2>Why we may use it: legal basis</h2>
+  <ul>
+    <li><strong>Your account and syncing</strong> (name, email, username, profile, training logs, board data, preferences): this is needed to provide the service you signed up for (Article 6(1)(b) GDPR, contract).</li>
+    <li><strong>Health data</strong> (readings from Health Connect and Fitbit, such as sleep, heart rate and heart rate variability, activity, weight and body measurements, and the injuries, check-ins and weight you enter yourself): this is data about your health, a special category. We use it only with your explicit consent (Article 9(2)(a) GDPR). You give it with a separate checkbox when you create an account, or on one screen the first time you open the app if your account has no decision yet. The consent is separate from accepting the terms.</li>
+    <li><strong>Optional connections and features you start yourself</strong> (Google Fitbit, Calendar and Drive, sending a meal photo or text to Gemini, your location for gym search, crash reports): your consent, given when you connect, tap or switch them on (Article 6(1)(a) GDPR). Linking a climbing board, importing a history file and Climb together are features you ask for; we use the data to provide them (contract).</li>
+    <li><strong>Keeping the service safe and affordable:</strong> a daily count of how many Gemini requests each account makes, so one account cannot run up the bill or abuse the service. It holds no text or images. Our legitimate interest (Article 6(1)(f) GDPR).</li>
+  </ul>
+
+  <h2>Withdrawing your consent for health data</h2>
+  <p>You can withdraw it at any time in the app: Account, Health data consent, Withdraw consent. Vireo then stops reading Health Connect and Fitbit. Withdrawing does not make earlier use unlawful, and it does not delete what is already stored: that stays until you delete your account. Things you typed in yourself (weight, injuries, check-ins) can still be saved while consent is withdrawn; delete your account if you want them gone. You can allow health data again at any time.</p>
+
   <h2>Where your data is stored</h2>
   <p>Data is stored on your device and in your personal account in our cloud database, linked to your account identifier so it can follow you across devices.</p>
+
+  <h2>How long we keep your data, and what deleting your account removes</h2>
+  <p>We keep your data for as long as your account exists. You can delete your account in the app (Account, Delete my account), on the <a href="../delete-account/">delete account page</a>, or by emailing us. Deleting removes, in this order: everything stored for you in our cloud database (your synced profile, settings, training, logs, board data and heart-rate series), then your sign-in account with its linked identities and sessions; the app then clears everything it holds on your phone.</p>
+  <p>Some things are not removed by deleting your account:</p>
+  <ul>
+    <li>The daily Gemini request counter described above. It is a number per day with no content. Once your account is deleted it is no longer linked to your name or email.</li>
+    <li>Anything stored in your own Google account, such as training sessions Vireo added to your Google Calendar and videos it backed up to your Google Drive. Remove those in Google. You can also disconnect Vireo there.</li>
+    <li>Crash reports, if you turned on “Send crash reports”, which are held by Google Firebase Crashlytics under its own retention rules.</li>
+    <li>Your account with a board maker (Kilter, MoonBoard, Aurora), which Vireo never changes.</li>
+  </ul>
+
+  <h2>Where your data is processed, and transfers outside the EU</h2>
+  <ul>
+    <li>Our cloud database and sign-in service run at Supabase in Ireland (AWS region eu-west-1), inside the EU.</li>
+    <li>Gemini requests go through a small Vireo function at Supabase that adds our key and forwards the request to Google’s Gemini API. Google may process that request outside the EU, including in the United States. The request holds only what you chose to send, not your account details.</li>
+    <li>Fitbit, Calendar and Drive connections, and crash reports, are handled by Google, which may also process data outside the EU.</li>
+    <li>OpenStreetMap services and Open Food Facts are run by their own operators, and we do not control where their servers are.</li>
+  </ul>
+  <p>When data leaves the EU, the transfer relies on a safeguard the GDPR allows, such as an adequacy decision or standard contractual clauses, as offered by the provider.</p>
+
+  <h2>Your rights</h2>
+  <p>You have the right to:</p>
+  <ul>
+    <li>get a copy of your data (access) and receive it in a common, machine-readable format (portability);</li>
+    <li>have wrong data corrected;</li>
+    <li>have your data deleted;</li>
+    <li>ask us to limit how we use it;</li>
+    <li>object to use based on our legitimate interest;</li>
+    <li>withdraw a consent at any time, with effect for the future;</li>
+    <li>complain to a data protection authority, in the EU country where you live or work or where you think your rights were breached. In Germany, that is the data protection authority of your federal state.</li>
+  </ul>
+  <p>To use any of these, email <a href="mailto:privacy@vireotrain.app">privacy@vireotrain.app</a>. Deleting your account and withdrawing health data consent you can also do yourself in the app.</p>
 
   <h2>Third-party services</h2>
   <ul>
@@ -92,10 +138,10 @@
   <p>We do not sell your personal data or use it for advertising.</p>
 
   <h2>Your choices</h2>
-  <p>You can sign out at any time, revoke Health Connect permissions in your Android settings, disconnect your Google account as described above, and ask for your account data to be deleted by emailing us.</p>
+  <p>You can sign out at any time, withdraw your health data consent in the app, revoke Health Connect permissions in your Android settings, disconnect your Google account as described above, and delete your account in the app or by emailing us.</p>
 
   <h2>Children</h2>
-  <p>Vireo is not intended for children under 13.</p>
+  <p>Vireo is for people aged 16 or older. It is not intended for anyone younger, and we do not knowingly collect data from them. If you think a younger person has an account, email us and we will delete it.</p>
 
   <h2>Changes</h2>
   <p>We may update this policy; material changes will be shown on this page.</p>
